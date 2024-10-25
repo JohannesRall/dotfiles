@@ -2,7 +2,7 @@ set -g fish_greeting
 
 if status is-interactive
     starship init fish | source
-    fastfetch --config hypr
+
 end
 
 # Handy change dir shortcuts
