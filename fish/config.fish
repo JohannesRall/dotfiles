@@ -22,5 +22,7 @@ end
 
 abbr -a !! --position anywhere --function last_history_item
 abbr mkdir 'mkdir -p'
+abbr v 'nvim'
+abbr gacp 'git add . && git commit && git push origin'
 
 zoxide init fish | source
