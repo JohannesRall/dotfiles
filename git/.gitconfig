@@ -1,0 +1,60 @@
+[user]
+	email = johannes.rall@btb.gmbh
+	name = Johannes Rall
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[pull]
+  rebase = true
+
+[alias]
+    # Basic commands
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    
+    # Logging
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    
+    # Shorthand for add
+    a = add
+    aa = add --all
+    
+    # Commit shortcuts
+    cm = commit -m
+    ca = commit --amend
+    
+    # Push and pull
+    ps = push origin
+    pl = pull origin
+    
+    # Diff
+    df = diff
+    dc = diff --cached
+    
+    # Stash
+    ss = stash
+    sp = stash pop
+    
+    # Reset
+    rs = reset
+    rsh = reset --hard
+    
+    # Remote
+    rv = remote -v
+    
+    # Merge
+    m = merge
+    
+    # Fetch
+  f = fetch
+
+  # Switch
+  sc = switch -c
+
+[core]
+	editor = nvim
