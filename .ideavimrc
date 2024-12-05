@@ -3,6 +3,12 @@ set clipboard+=unnamed
 set clipboard+=ideaput
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+""" WhichKey
+set which-key
+set notimeout
+let g:WhichKey_FontFamily="GeistMono Nerd Font"
+
 """ The Escape button
 map <C-c> <Esc>
 """ The Leader Key
@@ -48,11 +54,13 @@ nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap <leader>a :action ShowIntentionActions<CR>
 
-nnoremap <leader>sc :action GotoClass<CR>
-nnoremap <leader>s. :action RecentFiles<CR>
-nnoremap <leader>sf :action GotoFile<CR>
-nnoremap <leader>sa :action GotoAction<CR>
-nnoremap <leader>ss :action GotoSymbol<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+nnoremap <leader>fr :action RecentFiles<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>fp :action SearchEverywhere<CR>
+nnoremap <leader>ft :action TextSearchAction<CR>
 
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
