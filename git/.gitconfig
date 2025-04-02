@@ -58,3 +58,4 @@
 
 [core]
 	editor = nvim
+	autocrlf = input
