@@ -1,4 +1,5 @@
 """ Editing and Reloading the Config
+set ignorecase
 set clipboard+=unnamed
 set clipboard+=ideaput
 nnoremap \e :e ~/.ideavimrc<CR>
@@ -9,9 +10,28 @@ set which-key
 set notimeout
 let g:WhichKey_FontFamily="GeistMono Nerd Font"
 
-""" The Escape button
-map <C-c> <Esc>
-""" The Leader Key
+""" Fuzzier
+set fuzzier
+noremap <Leader>fz :action com.mituuz.fuzzier.Fuzzier<CR>
+noremap <Leader>mf :action com.mituuz.fuzzier.FuzzyMover<CR>
+
+""" Harpoon
+set harpooner
+nnoremap <Leader>1 :action HarpoonerOpenFile0<CR>
+nnoremap <Leader>2 :action HarpoonerOpenFile1<CR>
+nnoremap <Leader>3 :action HarpoonerOpenFile2<CR>
+nnoremap <Leader>4 :action HarpoonerOpenFile3<CR>
+
+nnoremap <Leader>hm :action HarpoonerQuickMenu<CR>
+nnoremap <Leader>ha :action HarpoonerAddFile<CR>
+
+nnoremap <Leader>hn :action HarpoonerNextFileAction<CR>
+nnoremap <Leader>hp :action HarpoonerPreviousFileAction<CR>)
+
+vnoremap K :action MoveLineUp<CR>
+vnoremap J :action MoveLineDown<CR>
+
+
 let mapleader=" "
 """ Distraction Free Mode
 nnoremap <c-z> :action ToggleZenMode<CR>
@@ -19,8 +39,7 @@ nnoremap <c-z> :action ToggleZenMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 """ Navigation
-nmap <Leader>h :split<CR>
-nmap <Leader>v :vsplit<CR>
+nnoremap <leader>v :vsplit<CR>
 nnoremap <c-=> :action Unsplit<CR>
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
 sethandler <c-j> a:vim
@@ -29,13 +48,18 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
-nnoremap <TAB> :action NextTab<CR>
-nnoremap <s-TAB> :action PreviousTab<CR>
-nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+nnoremap <s-l> :action NextTab<CR>
+nnoremap <s-h> :action PreviousTab<CR>
+
+"""windows
 nnoremap <Leader>n :action NextWindow<CR>
 nnoremap <Leader>q :action CloseEditor<CR>
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>wa :action ActivateS-MScodeAssistToolWindow<CR>
+nnoremap <leader>wh :action HideAllWindows<CR>
 
-
+set visualbell
+set noerrorbells
 """ Editing source code
 set ideajoin
 set idearefactormode=keep
@@ -47,41 +71,36 @@ nnoremap zc :action CollapseRegion<CR>
 nnoremap zo :action ExpandRegion<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
-nnoremap <leader>cl :action CommentByLineComment<CR>
-nnoremap <leader>cb :action CommentByBlockComment<CR>
+vnoremap <leader>cb :action CommentByBlockComment<CR>
+noremap <leader>cl :action CommentByLineComment<CR>
 nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
 nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
+nnoremap <leader>i :action ShowHoverInfo<CR>
 nnoremap <leader>a :action ShowIntentionActions<CR>
 
+noremap <leader>fp :action FindInPath<CR>
 nnoremap <leader>fc :action GotoClass<CR>
 nnoremap <leader>fr :action RecentFiles<CR>
 nnoremap <leader>ff :action GotoFile<CR>
 nnoremap <leader>fa :action GotoAction<CR>
 nnoremap <leader>fs :action GotoSymbol<CR>
-nnoremap <leader>fp :action SearchEverywhere<CR>
 nnoremap <leader>ft :action TextSearchAction<CR>
 
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
-nnoremap <leader>s :write<CR>
 """ Searching and Source Code Navigation
 set incsearch
-vnoremap <leader>fp :action FindInPath<CR>
-nnoremap <c-a> :action GotoAction<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>sr :action GotoRelated<CR>
 nnoremap <leader>b :action ShowNavBar<CR>
 nnoremap <c-s> :action FileStructurePopup<CR>
-nnoremap gc :action GotoClass<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gp :action GotToSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>
-""" Tool windows
-nnoremap <c-p> :action JumpToLastWindow<CR>
-nnoremap <c-x> :action HideAllWindows<CR>
+
 """ Running and Debugging
 nnoremap ,r :action Run<CR>
 nnoremap ,c :action RunClass<CR>
@@ -92,7 +111,14 @@ nnoremap ,f :action RerunFailedTests<CR>
 nnoremap ,b :action ToggleLineBreakpoint<CR>
 nnoremap ,d :action ContextDebug<CR>
 nnoremap ,n :action ActivateDebugToolWindow<CR>
-
-""" Vim remaps
+nnoremap ,a :action RunAnything<CR>
+nnoremap ,h :action LocalHistory.ShowHistory<CR>
+""" Vim remap
 nnoremap <leader>yf V/{<CR>%y
 nnoremap <leader>df V/{<CR>%d
+nnoremap Y y$
+nnoremap Q @q
+nnoremap <leader>p "0p
+nnoremap <leader>d "_d
+nnoremap <leader>c "_c
+nnoremap U <C-r>
