@@ -12,8 +12,9 @@ let g:WhichKey_FontFamily="GeistMono Nerd Font"
 
 """ Fuzzier
 set fuzzier
-noremap <Leader>fz :action com.mituuz.fuzzier.Fuzzier<CR>
-noremap <Leader>mf :action com.mituuz.fuzzier.FuzzyMover<CR>
+"""noremap <Leader>fz :action com.mituuz.fuzzier.Fuzzier<CR>
+"""noremap <Leader>mf :action com.mituuz.fuzzier.FuzzyMover<CR>
+noremap <Leader>fz :action com.fuzzyfilesearch.SearchPattern<CR>
 
 """ Harpoon
 set harpooner
@@ -26,7 +27,7 @@ nnoremap <Leader>hm :action HarpoonerQuickMenu<CR>
 nnoremap <Leader>ha :action HarpoonerAddFile<CR>
 
 nnoremap <Leader>hn :action HarpoonerNextFileAction<CR>
-nnoremap <Leader>hp :action HarpoonerPreviousFileAction<CR>)
+nnoremap <Leader>hp :action HarpoonerPreviousFileAction<CR>
 
 vnoremap K :action MoveLineUp<CR>
 vnoremap J :action MoveLineDown<CR>

@@ -1,12 +1,6 @@
 [user]
-	email = johannes.rall@btb.gmbh
+	email = johannes.rall@pm.me
 	name = Johannes Rall
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
 [pull]
   rebase = true
 
@@ -51,11 +45,11 @@
     m = merge
     
     # Fetch
-  f = fetch
+    f = fetch
 
-  # Switch
-  sc = switch -c
+    # Switch
+    sc = switch -c
 
 [core]
 	editor = nvim
-	autocrlf = input
+	autocrlf = false

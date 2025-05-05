@@ -12,8 +12,8 @@ abbr ... 'cd ../..'
 abbr .3 'cd ../../..'
 abbr .4 'cd ../../../..'
 abbr .5 'cd ../../../../..'
-abbr ytd 'yt-dlp -xo "$HOME/Music/%(title)s.%(ext)s" 
-'
+
+alias y="yay -Syu --noconfirm --editmenu=false && flatpak update -y"
 alias z="zoxide"
 alias ls="eza"
 
@@ -27,3 +27,22 @@ abbr v nvim
 abbr gacp 'git add . && git commit && git push origin'
 
 zoxide init fish | source
+
+function ytd
+    if test -f $argv[1]
+        set urls (cat $argv[1])
+    else
+        set urls $argv
+    end
+
+    for url in $urls
+        set filename (yt-dlp --get-filename -o "$HOME/Music/%(title)s.%(ext)s" $url)
+
+        if test -e $filename
+            echo "Already downloaded: (basename $filename)"
+        else
+            echo "Downloading: $url"
+            yt-dlp -xo "$HOME/Music/%(title)s.%(ext)s" $url
+        end
+    end
+end
