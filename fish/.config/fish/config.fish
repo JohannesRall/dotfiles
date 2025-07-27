@@ -4,6 +4,7 @@ set -g EDITOR nvim
 
 if status is-interactive
     starship init fish | source
+    zoxide init fish | source
 end
 
 # Handy change dir shortcuts
@@ -24,9 +25,6 @@ end
 abbr -a !! --position anywhere --function last_history_item
 abbr mkdir 'mkdir -p'
 abbr v nvim
-abbr gacp 'git add . && git commit && git push origin'
-
-zoxide init fish | source
 
 function ytd
     if test -f $argv[1]
