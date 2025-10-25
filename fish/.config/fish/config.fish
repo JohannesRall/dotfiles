@@ -14,8 +14,7 @@ abbr .3 'cd ../../..'
 abbr .4 'cd ../../../..'
 abbr .5 'cd ../../../../..'
 
-alias y="yay -Syu --noconfirm --editmenu=false && flatpak update -y"
-alias z="zoxide"
+alias update="yay -Syu --noconfirm --editmenu=false && flatpak update -y"
 alias ls="eza"
 
 function last_history_item
@@ -43,4 +42,13 @@ function ytd
             yt-dlp -xo "$HOME/Music/%(title)s.%(ext)s" $url
         end
     end
+end
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
 end
