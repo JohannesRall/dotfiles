@@ -25,6 +25,18 @@ abbr -a !! --position anywhere --function last_history_item
 abbr mkdir 'mkdir -p'
 abbr v nvim
 
+function sshf
+    # Gather all ssh config files
+    set config_files ~/.ssh/config (ls ~/.ssh/config.d 2>/dev/null | sed 's|^|~/.ssh/config.d/|')
+
+    # Let user pick a host with fzf
+    set host (grep "^Host " $config_files | awk '{print $2}' | sort -u | fzf)
+
+    if test -n "$host"
+        ssh $host
+    end
+end
+
 function ytd
     if test -f $argv[1]
         set urls (cat $argv[1])
@@ -52,3 +64,14 @@ function y
     end
     rm -f -- "$tmp"
 end
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+fish_add_path /home/johannes/.opencode/bin
+
+# pnpm
+set -gx PNPM_HOME "/home/johannes/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
