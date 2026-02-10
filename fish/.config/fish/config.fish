@@ -64,7 +64,6 @@ function y
     end
     rm -f -- "$tmp"
 end
-export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
 fish_add_path /home/johannes/.opencode/bin
@@ -72,6 +71,14 @@ fish_add_path /home/johannes/.opencode/bin
 # pnpm
 set -gx PNPM_HOME "/home/johannes/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+function nvm
+    bass source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
+# opencode
+fish_add_path /home/johannes/.opencode/bin
+export PATH="$HOME/.local/bin:$PATH"
