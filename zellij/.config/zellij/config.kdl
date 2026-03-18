@@ -253,6 +253,19 @@ load_plugins {
 // simplified_ui true
  
 themes {
+ catppuccin-latte {
+    bg "#acb0be" // Surface2
+    fg "#4c4f69" // Text
+    red "#d20f39"
+    green "#40a02b"
+    blue "#1e66f5"
+    yellow "#df8e1d"
+    magenta "#ea76cb" // Pink
+    orange "#fe640b" // Peach
+    cyan "#04a5e5" // Sky
+    black "#e6e9ef" // Mantle
+    white "#4c4f69" // Text
+  }
  catppuccin-mocha {
     bg "#585b70" // Surface2
     fg "#cdd6f4" // Text
@@ -271,7 +284,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-mocha"
+theme "catppuccin-latte"
 // Choose the base input mode of zellij.
 // Default: normal
 // 
