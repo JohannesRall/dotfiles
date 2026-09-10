@@ -239,6 +239,7 @@ plugins {
     }
 }
 
+
 // Plugins to load in the background when a new session starts
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
@@ -284,16 +285,16 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-latte"
+theme "catppuccin-mocha"
 // Choose the base input mode of zellij.
 // Default: normal
 // 
-default_mode "locked"
+//default_mode "normal"
  
 // Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
+// Default: $SHEL
 // 
-// default_shell "fish"
+default_shell "fish"
  
 // Choose the path to override cwd that zellij will use for opening new panes
 // 
