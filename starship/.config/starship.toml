@@ -1,4 +1,4 @@
-# Sets user-defined palette
+# Default palette; fish generates STARSHIP_CONFIG for dynamic switching
 palette = "catppuccin_mocha"
 
 [character]

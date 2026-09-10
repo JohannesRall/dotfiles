@@ -1,20 +1,21 @@
-[font.normal]
-family = "JetBrainsMono NerdFont"
-style = "Medium"
-
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Bold"
-
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-style = "Italic"
+# [font.normal]
+# family = "JetBrainsMono NerdFont"
+# style = "Medium"
+#
+# [font.bold]
+# family = "JetBrainsMono Nerd Font"
+# style = "Bold"
+#
+# [font.italic]
+# family = "JetBrainsMono Nerd Font"
+# style = "Italic"
 
 
 [font]
 size = 12
 
 [window]
+decorations = "None"
 opacity = 0.9
 
 [window.padding]
